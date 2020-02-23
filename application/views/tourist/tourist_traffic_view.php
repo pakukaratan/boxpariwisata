@@ -42,40 +42,22 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <section class="row posts">
-                <header><h1 class="text-danger text-center">Your Spot Booking History</h1></header>
+            <?php foreach($traffics as $traffic):?>
+                <header><h1 class="text-danger text-center"><?= $traffic->title;?></h1></header>
                 <br><br><br>
-                <article class="post">
-                    <div class="row well">
-                        <div class="col-md-12">
-                            <table class="table datatable">
-                                <thead>
-                                    <th>Spot Name</th>
-                                    <th>Spot Image</th>
-                                    <th>Total Tickets</th>
-                                    <th>Price</th>
-                                    <th>Total Price</th>
-                                    <th>Booking Time</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($histories as $history):?>
-                                        <tr>
-                                            <td><?= $history->spot_name ?></td>
-                                            <td><img src="<?= base_url("assets/img/$history->spot_image") ?>" width="50"></td>
-                                            <td><?= $history->booking_count ?></td>
-                                            <td><?= $history->rate ?> IDR</td>
-                                            <td><?= $history->total_price ?> IDR</td>
-                                            <td><?= $history->date ?></td>
-                                            <td><?= $history->status ?></td>
-                                            <td><?php if ($history->status == "Waiting for payment"){ echo "<a href='" . base_url("tourist/pay/spot/$history->id") . "' class='btn btn-primary'>Pay</a>";} ?></td>
-                                        </tr>
-                                    <?php endforeach ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </article>
+                    <article class="post">
+                        <div class="row well">
+                            <div class="traffic-img col-md-12">
+                                <center><img class="img-responsive" height="40%" width="40%" src="<?= base_url('assets/img/'.$traffic->image);?>"></center>
+                            </div>
+                            <div class="col-md-12"></div>
+                            <div class="col-md-12">
+                                <br/><br/>
+                                <p class="text-justify">&nbsp;&nbsp;&nbsp;&nbsp;<?= $traffic->description;?></p>
+                            </div>
+                        </div> 
+                    </article>
+                <?php endforeach;?>
             </section>
         </div>
     </div>

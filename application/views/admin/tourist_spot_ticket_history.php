@@ -24,6 +24,8 @@
                         <th>Price</th>
                         <th>Total Price</th>
                         <th>Booking Time</th>
+                        <th>Status</th>
+                        <th>Action</th>
                     </thead>
 
                     <tbody>
@@ -34,9 +36,11 @@
                                 <td><img src="<?= base_url("assets/img/$spot_booking->spot_image") ?>" width="50"></td>
                                 <td><?= $spot_booking->tourist_name ?></td>
                                 <td><?= $spot_booking->booking_count ?></td>
-                                <td><?= $spot_booking->rate ?> TK</td>
-                                <td><?= $spot_booking->total_price ?> TK</td>
+                                <td><?= $spot_booking->rate ?> IDR</td>
+                                <td><?= $spot_booking->total_price ?> IDR</td>
                                 <td><?= $spot_booking->date ?></td>
+                                <td><?= $spot_booking->status ?></td>
+                                <td><?php if ($spot_booking->status == "Waiting Confirmation"){ echo "<a href='" . base_url("admin/confirm/spot/$spot_booking->id") . "' class='btn btn-primary'>Confirm</a>";} ?></td>
                             </tr>
                         <?php endforeach ?>
 

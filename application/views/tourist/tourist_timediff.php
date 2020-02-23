@@ -42,40 +42,22 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <section class="row posts">
-                <header><h1 class="text-danger text-center">Your Spot Booking History</h1></header>
+                <header><h1 class="text-danger text-center">Time Differences </h1></header>
+               
                 <br><br><br>
-                <article class="post">
-                    <div class="row well">
-                        <div class="col-md-12">
-                            <table class="table datatable">
-                                <thead>
-                                    <th>Spot Name</th>
-                                    <th>Spot Image</th>
-                                    <th>Total Tickets</th>
-                                    <th>Price</th>
-                                    <th>Total Price</th>
-                                    <th>Booking Time</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($histories as $history):?>
-                                        <tr>
-                                            <td><?= $history->spot_name ?></td>
-                                            <td><img src="<?= base_url("assets/img/$history->spot_image") ?>" width="50"></td>
-                                            <td><?= $history->booking_count ?></td>
-                                            <td><?= $history->rate ?> IDR</td>
-                                            <td><?= $history->total_price ?> IDR</td>
-                                            <td><?= $history->date ?></td>
-                                            <td><?= $history->status ?></td>
-                                            <td><?php if ($history->status == "Waiting for payment"){ echo "<a href='" . base_url("tourist/pay/spot/$history->id") . "' class='btn btn-primary'>Pay</a>";} ?></td>
-                                        </tr>
-                                    <?php endforeach ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </article>
+                    <article class="post">
+                        <div class="row well">
+                            <div class="spot-img col-md-4">
+                                <div style="text-align:center;padding:1em 0;"> <h4><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/timezone/asia--jakarta"><span style="color:gray;">Current local time in</span><br />Waktu Indonesia Barat (WIB)</a></h4> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=small&timezone=Asia%2FJakarta" width="100%" height="90" frameborder="0" seamless></iframe> </div>
+                            </div>
+                            <div class="spot-img col-md-4">
+                                <div style="text-align:center;padding:1em 0;"> <h4><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/city/1645528"><span style="color:gray;">Current local time in</span><br />Waktu Indonesia Tengah (WITA)</a></h4> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=small&timezone=Asia%2FMakassar" width="100%" height="90" frameborder="0" seamless></iframe> </div>
+                            </div>
+                            <div class="spot-img col-md-4">
+                            <div style="text-align:center;padding:1em 0;"> <h4><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/city/2082600"><span style="color:gray;">Current local time in</span><br />Waktu Indonesia Timur (WIT)</a></h4> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=small&timezone=Asia%2FJayapura" width="100%" height="90" frameborder="0" seamless></iframe> </div>
+                            </div>
+                        </div> 
+                    </article>
             </section>
         </div>
     </div>

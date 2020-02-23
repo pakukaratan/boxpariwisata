@@ -71,14 +71,36 @@ $route['tourist/spot'] = 'tourist/getTouristSpots';
 $route['tourist/book/spot/(:num)'] = 'tourist/touristBookSpot/$1';
 $route['tourist/book/spot/ticket/(:num)'] = 'tourist/touristBookSpotTicket/$1';
 $route['tourist/spot/booking/history'] = 'tourist/getTouristSpotBookHistory';
+$route['tourist/pay/spot/(:num)'] = 'tourist/paySpot/$1';
+
 
 $route['tourist/restaurant'] = 'tourist/getTouristRestaurants';
 $route['tourist/book/restaurant/(:num)'] = 'tourist/touristBookRestaurant/$1';
 $route['tourist/book/restaurant/table/(:num)'] = 'tourist/touristBookRestaurantTable/$1';
 $route['tourist/restaurant/booking/history'] = 'tourist/getTouristRestaurantBookHistory';
+$route['tourist/pay/restaurant/(:num)'] = 'tourist/payRestaurant/$1';
 
 $route['tourist/daytrips'] = 'tourist/getTouristDayTrips';
 $route['daytrip/(:any)'] = 'tourist/getTouristDayTripsBy/$1';
+
+$route['tourist/currency'] = 'tourist/getTouristCurrency';
+$route['tourist/timedifference'] = 'tourist/getTouristTimeDiff';
+
+$route['tourist/etiquette'] = 'tourist/getTouristEtiquette';
+$route['etiquette/(:num)'] = 'tourist/getTouristEtiquetteBy/$1';
+
+$route['tourist/tipping'] = 'tourist/getTouristTipping';
+$route['tipping/(:num)'] = 'tourist/getTouristTippingBy/$1';
+
+$route['tourist/precautions'] = 'tourist/getTouristPrecaution';
+$route['precaution/(:num)'] = 'tourist/getTouristPrecautionBy/$1';
+
+$route['tourist/latestnews'] = 'tourist/getTouristLatestNews';
+$route['latestnews/(:num)'] = 'tourist/getTouristLatestNewsBy/$1';
+
+$route['tourist/traffic'] = 'tourist/getTouristTraffic';
+$route['traffic/(:num)'] = 'tourist/getTouristTrafficBy/$1';
+
 //===================== admin =============================//
 $route['admin'] = 'admin/dashboard';
 $route['admin/tourist/add'] = 'admin/createTourist';
@@ -92,6 +114,7 @@ $route['admin/tourist-spot/edit/(:num)'] = 'admin/editTouristSpot/$1';
 $route['admin/tourist-spot/update'] = 'admin/updateTouristSpot';
 $route['admin/tourist-spot/delete/(:num)'] = 'admin/deleteTouristSpot/$1';
 $route['admin/tourist-spot-booking-history'] = 'admin/touristSpotBookingHistory';
+$route['admin/confirm/spot/(:num)'] = 'admin/updateSpotStatus/$1';
 
 $route['admin/tourist-restaurant'] = 'admin/touristRestaurant';
 $route['admin/tourist-restaurant/add'] = 'admin/createTouristRestaurant';
@@ -99,6 +122,7 @@ $route['admin/tourist-restaurant/edit/(:num)'] = 'admin/editTouristRestaurant/$1
 $route['admin/tourist-restaurant/update'] = 'admin/updateTouristRestaurant';
 $route['admin/tourist-restaurant/delete/(:num)'] = 'admin/deleteTouristRestaurant/$1';
 $route['admin/tourist-restaurant-booking-history'] = 'admin/touristRestaurantBookingHistory';
+$route['admin/confirm/restaurant/(:num)'] = 'admin/updateRestaurantStatus/$1';
 
 $route['admin/tourist-hotel'] = 'admin/touristHotel';
 $route['admin/tourist-hotel/add'] = 'admin/createTouristHotel';
@@ -124,6 +148,37 @@ $route['admin/hotel/insert/room'] = 'admin/insertHotelRoom';
 $route['admin/hotel/edit/room/(:num)'] = 'admin/editHotelRoom/$1';
 $route['admin/hotel/update/room/(:num)'] = 'admin/updateHotelRoom/$1';
 $route['admin/hotel/delete/room/(:num)'] = 'admin/deleteHotelRoom/$1';
+
+
+$route['admin/tourist-etiquette'] = 'admin/touristEtiquette';
+$route['admin/tourist-etiquette/add'] = 'admin/createTouristEtiquette';
+$route['admin/tourist-etiquette/edit/(:num)'] = 'admin/editTouristEtiquette/$1';
+$route['admin/tourist-etiquette/update'] = 'admin/updateTouristEtiquette';
+$route['admin/tourist-etiquette/delete/(:num)'] = 'admin/deleteTouristEtiquette/$1';
+
+$route['admin/tourist-tipping'] = 'admin/touristTipping';
+$route['admin/tourist-tipping/add'] = 'admin/createTouristTipping';
+$route['admin/tourist-tipping/edit/(:num)'] = 'admin/editTouristTipping/$1';
+$route['admin/tourist-tipping/update'] = 'admin/updateTouristTipping';
+$route['admin/tourist-tipping/delete/(:num)'] = 'admin/deleteTouristTipping/$1';
+
+$route['admin/tourist-precaution'] = 'admin/touristPrecaution';
+$route['admin/tourist-precaution/add'] = 'admin/createTouristPrecaution';
+$route['admin/tourist-precaution/edit/(:num)'] = 'admin/editTouristPrecaution/$1';
+$route['admin/tourist-precaution/update'] = 'admin/updateTouristPrecaution';
+$route['admin/tourist-precaution/delete/(:num)'] = 'admin/deleteTouristPrecaution/$1';
+
+$route['admin/tourist-latestnews'] = 'admin/touristLatestNews';
+$route['admin/tourist-latestnews/add'] = 'admin/createTouristLatestNews';
+$route['admin/tourist-latestnews/edit/(:num)'] = 'admin/editTouristLatestNews/$1';
+$route['admin/tourist-latestnews/update'] = 'admin/updateTouristLatestNews';
+$route['admin/tourist-latestnews/delete/(:num)'] = 'admin/deleteTouristLatestNews/$1';
+
+$route['admin/tourist-traffic'] = 'admin/touristTraffic';
+$route['admin/tourist-traffic/add'] = 'admin/createTouristTraffic';
+$route['admin/tourist-traffic/edit/(:num)'] = 'admin/editTouristTraffic/$1';
+$route['admin/tourist-traffic/update'] = 'admin/updateTouristTraffic';
+$route['admin/tourist-traffic/delete/(:num)'] = 'admin/deleteTouristTraffic/$1';
 
 $route['admin/login'] = 'admin/getLogin';
 $route['admin/check/login'] = 'admin/postLogin';

@@ -55,6 +55,8 @@
                                     <th>Down Payment</th>
                                     <th>Total Down Payment</th>
                                     <th>Booking Time</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($histories as $history):?>
@@ -65,6 +67,8 @@
                                             <td><?= $history->rate ?> IDR</td>
                                             <td><?= $history->total_price ?> IDR</td>
                                             <td><?= $history->date ?></td>
+                                            <td><?= $history->status ?></td>
+                                            <td><?php if ($history->status == "Waiting for payment"){ echo "<a href='" . base_url("tourist/pay/restaurant/$history->id") . "' class='btn btn-primary'>Pay</a>";} ?></td>
                                         </tr>
                                     <?php endforeach ?>
                                 </tbody>

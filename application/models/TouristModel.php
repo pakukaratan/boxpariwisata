@@ -121,13 +121,19 @@ class TouristModel extends CI_Model
     }
     public function getTouristRestaurantBookHistory($tourist_id)
     {
-        $query = $this->db->select('*, tourist_restaurants.name as restaurant_name, tourist_restaurants.image as restaurant_image')
+        $query = $this->db->select('tourist_restaurant_books.id, tourist_restaurant_books.booking_count, tourist_restaurant_books.rate, tourist_restaurant_books.total_price, tourist_restaurant_books.date, tourist_restaurant_books.status    , tourist_restaurants.name as restaurant_name, tourist_restaurants.image as restaurant_image')
                     ->join('tourist_restaurants', 'tourist_restaurants.id = tourist_restaurant_books.tourist_restaurant_id')
                     ->where('tourist_id', $tourist_id)
                     ->get('tourist_restaurant_books')
                     ->result();
 
         return $query;
+    }
+    public function updateBookRestaurantStatus($id, $status)
+    {
+        $this->db->where('id = ', $id)
+            ->set('status', $status)
+            ->update('tourist_restaurant_books');
     }
     //=============================================== end Tourist Restaurant =========================================//
 
@@ -173,13 +179,20 @@ class TouristModel extends CI_Model
     }
     public function getTouristSpotBookHistory($tourist_id)
     {
-        $query = $this->db->select('*, tourist_spots.name as spot_name, tourist_spots.image as spot_image')
+        $query = $this->db->select('tourist_spot_books.id, tourist_spot_books.booking_count, tourist_spot_books.rate, tourist_spot_books.total_price, tourist_spot_books.date, tourist_spot_books.status , tourist_spots.name as spot_name, tourist_spots.image as spot_image')
                     ->join('tourist_spots', 'tourist_spots.id = tourist_spot_books.tourist_spot_id')
                     ->where('tourist_id', $tourist_id)
                     ->get('tourist_spot_books')
                     ->result();
 
         return $query;
+    }
+
+    public function updateBookSpotStatus($id, $status)
+    {
+        $this->db->where('id = ', $id)
+            ->set('status', $status)
+            ->update('tourist_spot_books');
     }
     //=============================================== end Tourist Spot =========================================//
 
@@ -253,6 +266,47 @@ class TouristModel extends CI_Model
     }
     public function getTouristDayTrips(){
         $result = $this->db->query("SELECT * FROM view_daytrips")->result();
+        return $result;
+    }
+
+    public function getTouristEtiquette(){
+        $result = $this->db->query("SELECT * FROM tourist_etiquettes")->result();
+        return $result;
+    }
+    public function getTouristEtiquetteBy($id){
+        $result = $this->db->query("SELECT * FROM tourist_etiquettes WHERE id = '$id'")->result();
+        return $result;
+    }
+    public function getTouristTipping(){
+        $result = $this->db->query("SELECT * FROM tourist_tippings")->result();
+        return $result;
+    }
+    public function getTouristTippingBy($id){
+        $result = $this->db->query("SELECT * FROM tourist_tippings WHERE id = '$id'")->result();
+        return $result;
+    }
+    public function getTouristPrecaution(){
+        $result = $this->db->query("SELECT * FROM tourist_precautions")->result();
+        return $result;
+    }
+    public function getTouristPrecautionBy($id){
+        $result = $this->db->query("SELECT * FROM tourist_precautions WHERE id = '$id'")->result();
+        return $result;
+    }
+    public function getTouristLatestNews(){
+        $result = $this->db->query("SELECT * FROM tourist_latestnewss")->result();
+        return $result;
+    }
+    public function getTouristLatestNewsBy($id){
+        $result = $this->db->query("SELECT * FROM tourist_latestnewss WHERE id = '$id'")->result();
+        return $result;
+    }
+    public function getTouristTraffic(){
+        $result = $this->db->query("SELECT * FROM tourist_traffics")->result();
+        return $result;
+    }
+    public function getTouristTrafficBy($id){
+        $result = $this->db->query("SELECT * FROM tourist_traffics WHERE id = '$id'")->result();
         return $result;
     }
 }

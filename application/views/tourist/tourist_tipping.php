@@ -42,40 +42,24 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <section class="row posts">
-                <header><h1 class="text-danger text-center">Your Spot Booking History</h1></header>
+                <header><h1 class="text-danger text-center">Tippings Articles</h1></header>
                 <br><br><br>
-                <article class="post">
-                    <div class="row well">
-                        <div class="col-md-12">
-                            <table class="table datatable">
-                                <thead>
-                                    <th>Spot Name</th>
-                                    <th>Spot Image</th>
-                                    <th>Total Tickets</th>
-                                    <th>Price</th>
-                                    <th>Total Price</th>
-                                    <th>Booking Time</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($histories as $history):?>
-                                        <tr>
-                                            <td><?= $history->spot_name ?></td>
-                                            <td><img src="<?= base_url("assets/img/$history->spot_image") ?>" width="50"></td>
-                                            <td><?= $history->booking_count ?></td>
-                                            <td><?= $history->rate ?> IDR</td>
-                                            <td><?= $history->total_price ?> IDR</td>
-                                            <td><?= $history->date ?></td>
-                                            <td><?= $history->status ?></td>
-                                            <td><?php if ($history->status == "Waiting for payment"){ echo "<a href='" . base_url("tourist/pay/spot/$history->id") . "' class='btn btn-primary'>Pay</a>";} ?></td>
-                                        </tr>
-                                    <?php endforeach ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </article>
+                <?php foreach($tippings as $tipping):?>
+                    <article class="post">
+                        <div class="row well">
+                            <div class="tipping-img col-md-6">
+                                <img class="img-responsive" src="<?= base_url('assets/img/'.$tipping->image);?>">
+                            </div>
+                            <div class="col-md-4">
+                                <span class="spot-name text-info"><?= $tipping->title;?></span> <br>
+                                <p class="text-justify"><?= substr($tipping->description,200);?></p>
+                            </div>
+                            <div class="col-md-offset-1 col-md-1">
+                                <a href="<?= base_url("tipping/$tipping->id") ?>" class="btn btn-primary">View</a>
+                            </div>
+                        </div> 
+                    </article>
+                <?php endforeach;?>
             </section>
         </div>
     </div>

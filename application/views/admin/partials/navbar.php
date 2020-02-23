@@ -76,6 +76,11 @@
                 <li <?php if($active == 'tourist') echo 'class=active'; ?>> <a href="<?= base_url('admin'); ?>"><i class="fa fa-home"></i> <span class="title">Tourist</span></a></li>
                 <li <?php if($active == 'spot') echo 'class=active'; ?>> <a href="<?= base_url('admin/tourist-spot'); ?>"><i class="fa fa-globe"></i> <span class="title">Spot</span></a></li>
                 <li <?php if($active == 'restaurant') echo 'class=active'; ?>> <a href="<?= base_url('admin/tourist-restaurant'); ?>"><i class="fa fa-spoon"></i> <span class="title">Restaurant</span></a></li>
+                <li <?php if($active == 'etiquette') echo 'class=active'; ?>> <a href="<?= base_url('admin/tourist-etiquette'); ?>"><i class="fa fa-newspaper-o"></i> <span class="title">Etiquette</span></a></li>
+                <li <?php if($active == 'tipping') echo 'class=active'; ?>> <a href="<?= base_url('admin/tourist-tipping'); ?>"><i class="fa fa-newspaper-o"></i> <span class="title">Tipping</span></a></li>
+                <li <?php if($active == 'precaution') echo 'class=active'; ?>> <a href="<?= base_url('admin/tourist-precaution'); ?>"><i class="fa fa-newspaper-o"></i> <span class="title">Precaution</span></a></li>
+                <li <?php if($active == 'latestnews') echo 'class=active'; ?>> <a href="<?= base_url('admin/tourist-latestnews'); ?>"><i class="fa fa-newspaper-o"></i> <span class="title">Latest News</span></a></li>
+                <li <?php if($active == 'traffic') echo 'class=active'; ?>> <a href="<?= base_url('admin/tourist-traffic'); ?>"><i class="fa fa-newspaper-o"></i> <span class="title">Traffic</span></a></li>
                 <!--<li <?php if($active == 'hotel') echo 'class=active'; ?>> <a href="<?= base_url('admin/tourist-hotel'); ?>"><i class="fa fa-h-square"></i> <span class="title">Hotel</span></a></li>-->
                 <li <?php if($active == 'spot-booking-history') echo 'class=active'; ?>> <a href="<?= base_url('admin/tourist-spot-booking-history'); ?>"><i class="fa fa-history"></i> <span class="title">Spot Booking History</span></a></li>
                 <li <?php if($active == 'restaurant-booking-history') echo 'class=active'; ?>> <a href="<?= base_url('admin/tourist-restaurant-booking-history'); ?>"><i class="fa fa-history"></i> <span class="title">Restaurant Booking History</span></a></li>

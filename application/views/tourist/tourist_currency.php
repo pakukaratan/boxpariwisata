@@ -42,40 +42,22 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <section class="row posts">
-                <header><h1 class="text-danger text-center">Your Spot Booking History</h1></header>
+                <header><h1 class="text-danger text-center">Currency Tables </h1></header>
+               
                 <br><br><br>
-                <article class="post">
-                    <div class="row well">
-                        <div class="col-md-12">
-                            <table class="table datatable">
-                                <thead>
-                                    <th>Spot Name</th>
-                                    <th>Spot Image</th>
-                                    <th>Total Tickets</th>
-                                    <th>Price</th>
-                                    <th>Total Price</th>
-                                    <th>Booking Time</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($histories as $history):?>
-                                        <tr>
-                                            <td><?= $history->spot_name ?></td>
-                                            <td><img src="<?= base_url("assets/img/$history->spot_image") ?>" width="50"></td>
-                                            <td><?= $history->booking_count ?></td>
-                                            <td><?= $history->rate ?> IDR</td>
-                                            <td><?= $history->total_price ?> IDR</td>
-                                            <td><?= $history->date ?></td>
-                                            <td><?= $history->status ?></td>
-                                            <td><?php if ($history->status == "Waiting for payment"){ echo "<a href='" . base_url("tourist/pay/spot/$history->id") . "' class='btn btn-primary'>Pay</a>";} ?></td>
-                                        </tr>
-                                    <?php endforeach ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </article>
+                    <article class="post">
+                        <div class="row well">
+                            <div class="spot-img col-md-12">
+<!--Currency Converter widget by FreeCurrencyRates.com -->
+
+<div id='gcw_mainFRn2tCedg' class='gcw_mainFRn2tCedg'></div>
+<a id='gcw_siteFRn2tCedg' href='https://freecurrencyrates.com/en/'>FreeCurrencyRates.com</a>
+<script>function reloadFRn2tCedg(){ var sc = document.getElementById('scFRn2tCedg');if (sc) sc.parentNode.removeChild(sc);sc = document.createElement('script');sc.type = 'text/javascript';sc.charset = 'UTF-8';sc.async = true;sc.id='scFRn2tCedg';sc.src = 'https://freecurrencyrates.com/en/widget-table?iso=USD-EUR-GBP-JPY-CNY-IDR&df=1&p=FRn2tCedg&v=fi&source=fcr&width=670&width_title=0&firstrowvalue=1&thm=A6C9E2,FCFDFD,4297D7,5C9CCC,FFFFFF,C5DBEC,FCFDFD,2E6E9E,000000&title=Currency%20Converter&tzo=-420';var div = document.getElementById('gcw_mainFRn2tCedg');div.parentNode.insertBefore(sc, div);} reloadFRn2tCedg(); </script>
+<!-- put custom styles here: .gcw_mainFRn2tCedg{}, .gcw_headerFRn2tCedg{}, .gcw_ratesFRn2tCedg{}, .gcw_sourceFRn2tCedg{} -->
+<!--End of Currency Converter widget by FreeCurrencyRates.com -->
+                            </div>
+                        </div> 
+                    </article>
             </section>
         </div>
     </div>

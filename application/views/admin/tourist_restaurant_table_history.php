@@ -25,6 +25,8 @@
                         <th>Price</th>
                         <th>Total Price</th>
                         <th>Booking Time</th>
+                        <th>Status</th>
+                        <th>Action</th>
                     </thead>
 
                     <tbody>
@@ -39,6 +41,8 @@
                                 <td><?= $restaurant_booking->rate ?> IDR</td>
                                 <td><?= $restaurant_booking->total_price ?> IDR</td>
                                 <td><?= $restaurant_booking->date ?></td>
+                                <td><?= $restaurant_booking->status ?></td>
+                                <td><?php if ($restaurant_booking->status == "Waiting Confirmation"){ echo "<a href='" . base_url("admin/confirm/restaurant/$restaurant_booking->id") . "' class='btn btn-primary'>Confirm</a>";} ?></td>
                             </tr>
                         <?php endforeach ?>
 

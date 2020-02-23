@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'chozytech.com',
-	'username' => 'u5838275_tour',
-	'password' => '12345',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
 	'database' => 'u5838275_tour1',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
